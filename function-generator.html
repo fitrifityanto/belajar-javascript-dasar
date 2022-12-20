@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        function* createName() {
+            yield "Fitriningtyas";
+            yield "Nur"
+            yield "Rochmah";
+        }
+
+        const names = createName();
+        // console.info(names);
+        for (name of names) {
+            // console.info(name);
+        }
+
+        //membuat function buatGanjil. dimana kita akan buat perulangan
+        // dari i = 1 , sampai value yang kita kirimkan di parameter
+        //function nya. misal datanya ganjil, kita yield i nya. 
+        //artinya dia akan men generate sebuah data generator yang isinya
+        //angka-angka ganjil saja.
+        function* buatGanjil(value) {
+            for (i = 1; i <= value; i++) {
+                if ( i % 2 === 1) {
+                    console.info(`Yield ${i} `);
+                    yield i;
+                }   
+            }
+        }
+        const numbers = buatGanjil(10);
+        // for (number of numbers) {
+        //     console.info(number);
+        // }
+        //kita panggil yield nya 2 kali
+        console.info(numbers.next().value);
+        console.info(numbers.next().value);
+    </script>
+</body>
+</html>

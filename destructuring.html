@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+
+        // const names = ["Fitriningtyas", "Nur", "Rochmah", "Widy", "Moko"];
+
+        // const [firstName, middleName, lastName, ...others] = names;
+
+        // console.info(firstName);
+        // console.info(middleName);
+        // console.info(lastName);
+        // console.info(others);
+
+
+        // const person = {
+        //     firstName: "Fitriningtyas",
+        //     lastName: "Rochmah",
+        //     address: {
+        //         street: "Jalan yang ini lho",
+        //         city: "Salatiga",
+        //         country: "Indonesia"
+        //     },
+        //     hoby: "belajar",
+        //     twitter: "@Fitrifityanto"
+        // };
+        // //mengambil data secara manual seperti ini akan kelamaan.
+        // // const firstName = person.firstName;
+
+        // //jadi kita gunakan destructuring
+        // let { firstName, lastName, address: {city, street, country}, 
+        // ...others} = person;
+
+        // console.info(firstName);
+        // console.info(lastName);
+        // console.info(city);
+        // console.info(street);
+        // console.info(country);
+        // console.info(others);
+
+
+        // //untuk function parameter, biasanya kita melakukan ini:
+        // // function displayPerson(person) {
+        // //     console.info(person.firstName);
+        // //     console.info(person.middleName);
+        // //     console.info(person.lastName);
+        // // }
+
+        // //jika menggunakan destructuring:
+        // function displayPerson({firstName, middleName, lastName}) {
+        //     console.info(firstName);
+        //     console.info(middleName);
+        //     console.info(lastName);
+        // }
+
+        // const person = {
+        //     firstName: "Fitriningtyas",
+        //     middleName: "Nur",
+        //     lastName:"Rochmah"
+        // };
+
+        // displayPerson(person);
+
+
+        function sum([first, second]) {
+            return first + second;
+        }
+
+        console.info(sum([1,1]));
+        console.info(sum([10,10]));
+
+        {
+            const names = ["Fitriningtyas", "Nur"];
+            let [firstName, middleName, lastName = "Utomo"] = names;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        {
+            const person = {
+                firstName: "Fitriningtyas",
+                lastName: "Rochmah"
+            }
+
+            let {firstName, middleName = "Nur", lastName} = person
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        //menggunakan variable lain
+        {
+            const person = {
+                firstName: "Fitriningtyas",
+                lastName: "Utomo"
+            }
+
+            let {
+                firstName: namaDepan, 
+                middleName: namaTengah = "Nur", 
+                lastName: namaBelakang
+            } = person
+
+            console.info(namaDepan);
+            console.info(namaTengah);
+            console.info(namaBelakang);
+        }
+
+    </script>
+</body>
+</html>
