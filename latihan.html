@@ -39,14 +39,24 @@
 
         //menambpilkan angka ascending dengan rekursif
         //sumber: https://www.geeksforgeeks.org/how-will-you-print-numbers-from-1-to-200-without-using-loop/
-        function cetakAngka(from, end) {
-            if ( from <= end) {
-                // document.writeln(`${from} `);
-                console.log(from);
-                cetakAngka(from + 1, end);
+        // function cetakAngka(from, end) {
+        //     if ( from <= end) {
+        //         // document.writeln(`${from} `);
+        //         console.log(from);
+        //         cetakAngka(from + 1, end);
+        //     }
+        // }
+        // cetakAngka(1,10);
+
+
+        //menampilkan angka descending dengan rekursif
+        function cetakAngka (from, end) {
+            if (from <= end) {
+                console.log(end);
+               cetakAngka(from, end-1);
             }
         }
-        cetakAngka(1,10);
+        cetakAngka(5,10);
 
 
         //menampilkan angka ascending dengan for loop
