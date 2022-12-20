@@ -22,25 +22,42 @@
 
 
 
+        //menampilkan angka descending dengan rekursif
         // function cetakAngka (n) {
         //     if ( n === 1) {
-        //         document.writeln(`<p>${n} </p>`);
+        //         // document.writeln(`<p>${n} </p>`);
+        //         console.log(n);
         //         return;
         //     }
             
-        //     document.writeln(`<p> ${n} </p>`);
+        //     // document.writeln(`<p> ${n} </p>`);
+        //     console.log(n);
         //     cetakAngka(n-1);
         // }
         // cetakAngka(10);
 
-        function cetakAngka (n) {
-            for (let i = 1; i <= n; i++) {
-                // document.writeln(`<p>${i} </p>`);
-                console.info(i);
+
+        //menambpilkan angka ascending dengan rekursif
+        //sumber: https://www.geeksforgeeks.org/how-will-you-print-numbers-from-1-to-200-without-using-loop/
+        function cetakAngka(from, end) {
+            if ( from <= end) {
+                // document.writeln(`${from} `);
+                console.log(from);
+                cetakAngka(from + 1, end);
             }
         }
+        cetakAngka(1,10);
 
-        cetakAngka(5);
+
+        //menampilkan angka ascending dengan for loop
+        // function cetakAngka (n) {
+        //     for (let i = 1; i <= n; i++) {
+        //         // document.writeln(`<p>${i} </p>`);
+        //         console.info(i);
+        //     }
+        // }
+
+        // cetakAngka(5);
 
     </script>
 </body>
